@@ -5,7 +5,7 @@ git clone https://github.com/fengzero25/vimConfig.git
 # Install
 ## install neovim
 <https://github.com/neovim/neovim>  
-ln -s /usr/local/bin/nvim nvim.appimage
+`ln -s /usr/local/bin/nvim nvim.appimage`
 
 ## install vim-plug
 <https://github.com/junegunn/vim-plug>
@@ -19,7 +19,7 @@ ln -s /usr/local/bin/nvim nvim.appimage
 <https://github.com/neoclide/coc.vim>
 
 ### install nodejs
-curl -sL install-node.now.sh/lts | sudo bash
+`curl -sL install-node.now.sh/lts | sudo bash`
 
 ### install coc extensions
 coc-json coc-tsserver coc-html coc-css coc-vetur coc-yaml coc-python coc-highlight coc-snippets coc-git coc-vimlsp coc-xml coc-pairs
@@ -48,4 +48,4 @@ dependence: cmake g++ clang zlib-dev(zlib1g-dev)
 <https://github.com/sbdchd/neoformat>
 ## clang-format
 <http://clang.llvm.org/docs/ClangFormat.html>  
-npm install -g clang-format
+`npm install -g clang-format`
