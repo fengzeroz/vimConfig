@@ -26,13 +26,13 @@ coc-json coc-tsserver coc-html coc-css coc-vetur coc-yaml coc-python coc-highlig
 
 # autocomplete
 ## ccls install(c/c++)
-<https://github.com/MaskRay/ccls/wiki>
+<https://github.com/MaskRay/ccls/wiki>  
 dependence: cmake g++ clang zlib-dev(zlib1g-dev)  
 format: clang-format
 
 ## gopls(golang)
-<https://github.com/golang/tools/tree/master/gopls>
-`go get golang.org/x/tools/gopls@latest`
+<https://github.com/golang/tools/tree/master/gopls>  
+`go get golang.org/x/tools/gopls@latest`  
 `mv gopls /usr/local/bin`
 
 ## bash 
