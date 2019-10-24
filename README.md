@@ -28,7 +28,6 @@ coc-json coc-tsserver coc-html coc-css coc-vetur coc-yaml coc-python coc-highlig
 ## ccls install(c/c++)
 <https://github.com/MaskRay/ccls/wiki>  
 dependence: cmake g++ clang zlib-dev(zlib1g-dev)  
-format: clang-format
 
 ## gopls(golang)
 <https://github.com/golang/tools/tree/master/gopls>  
@@ -43,3 +42,10 @@ format: clang-format
 
 ## efm-langserver(vim/erb/markdown)
 <https://github.com/mattn/efm-langserver>
+
+
+# format
+<https://github.com/sbdchd/neoformat>
+## clang-format
+npm install -g clang-format
+<clang.llvm.org/docs/ClangFormat.html>
