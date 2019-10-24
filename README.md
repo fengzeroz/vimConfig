@@ -12,7 +12,7 @@
 `ln -s vimConfig/coc-settings.json ~/.config/nvim/coc-settings.json`
 
 ## install coc-vim
-<https://github.com/neoclide/coc.vim>
+<https://github.com/neoclide/coc.nvim>
 
 ### install nodejs
 `curl -sL install-node.now.sh/lts | sudo bash`
