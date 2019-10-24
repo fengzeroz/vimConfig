@@ -2,9 +2,13 @@
 
 git clone https://github.com/fengzero25/vimConfig.git
 
-1.install neovim
+#Install
+##install neovim
 https://github.com/neovim/neovim
 ln -s /usr/local/bin/nvim nvim.appimage
+
+
+
 
 2.install vim-plug
 https://github.com/junegunn/vim-plug
@@ -42,3 +46,4 @@ https://github.com/mads-hartmann/bash-language-server
 https://scalameta.org/metals/docs/editors/vim.html
 
 10.efm-langserver(vim/erb/markdown)
+https://github.com/mattn/efm-langserver

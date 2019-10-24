@@ -71,6 +71,11 @@
             "command": "metals-vim",
             "rootPatterns": ["build.sbt"],
             "filetypes": ["scala", "sbt"]
+        },
+        "efm": {
+            "command": "efm-langserver",
+            "args": [],
+            "filetypes": ["vim", "eruby", "markdown", "yaml"]
         }
     }
 }
