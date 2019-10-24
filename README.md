@@ -24,8 +24,21 @@ curl -sL install-node.now.sh/lts | sudo bash
 coc-json coc-tsserver coc-html coc-css coc-vetur coc-yaml coc-python coc-highlight coc-snippets coc-git coc-vimlsp coc-xml coc-pairs
 
 autocomplete
-6.ccls install
+6.ccls install(c/c++)
 https://github.com/MaskRay/ccls/wiki
-dependence: cmake g++ clang zlib-dev(zlib1g-dev
+dependence: cmake g++ clang zlib-dev(zlib1g-dev)
 format: clang-format
 
+
+7.gopls(golang)
+https://github.com/golang/tools/tree/master/gopls
+go get golang.org/x/tools/gopls@latest
+mv gopls /usr/local/bin
+
+8.bash 
+https://github.com/mads-hartmann/bash-language-server
+
+9.metals(scala)
+https://scalameta.org/metals/docs/editors/vim.html
+
+10.efm-langserver(vim/erb/markdown)
