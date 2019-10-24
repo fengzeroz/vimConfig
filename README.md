@@ -24,23 +24,22 @@ curl -sL install-node.now.sh/lts | sudo bash
 ### install coc extensions
 coc-json coc-tsserver coc-html coc-css coc-vetur coc-yaml coc-python coc-highlight coc-snippets coc-git coc-vimlsp coc-xml coc-pairs
 
-autocomplete
-6.ccls install(c/c++)
-https://github.com/MaskRay/ccls/wiki
-dependence: cmake g++ clang zlib-dev(zlib1g-dev)
+# autocomplete
+## ccls install(c/c++)
+<https://github.com/MaskRay/ccls/wiki>
+dependence: cmake g++ clang zlib-dev(zlib1g-dev)  
 format: clang-format
 
+## gopls(golang)
+<https://github.com/golang/tools/tree/master/gopls>
+`go get golang.org/x/tools/gopls@latest`
+`mv gopls /usr/local/bin`
 
-7.gopls(golang)
-https://github.com/golang/tools/tree/master/gopls
-go get golang.org/x/tools/gopls@latest
-mv gopls /usr/local/bin
+## bash 
+<https://github.com/mads-hartmann/bash-language-server>
 
-8.bash 
-https://github.com/mads-hartmann/bash-language-server
+## metals(scala)
+<https://scalameta.org/metals/docs/editors/vim.html>
 
-9.metals(scala)
-https://scalameta.org/metals/docs/editors/vim.html
-
-10.efm-langserver(vim/erb/markdown)
-https://github.com/mattn/efm-langserver
+## efm-langserver(vim/erb/markdown)
+<https://github.com/mattn/efm-langserver>
