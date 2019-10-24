@@ -79,6 +79,10 @@ Plug 'honza/vim-snippets'
 "support python: pip install pydi
 "support bash: npn i -g bash-language-server
 
+Plug 'scrooloose/nerdcommenter'
+
+"format
+Plug 'sbdchd/neoformat'
 call plug#end()
 
 "nerdtree plug
@@ -119,3 +123,18 @@ autocmd BufWritePre *.go :call CocAction('format')
 autocmd BufRead,BufNewFile *.sbt set filetype=scala
 
 set statusline^=%{coc#status()}%{get(b:'coc_current_function','')}
+
+"nerdcommenter
+let g:NERDSpaceDelims = 1
+let g:NERDCompactSexyComs = 1
+let g:NERDDefaultAlign = 'left'
+let g:NERDAltDelims_java = 1
+let g:NERDCustomDelimiters = {'c': {'left': '/**', 'right': '*/'}}
+let g:NERDCommentEmptyLines = 1
+let g:NERDTrimTrailingWhitespace = 1
+let g:NERDToggleCheckAllLines = 1
+
+"format
+autocmd BufWritePre *.c undojoin | Neoformat clangformat
+autocmd BufWritePre *.h undojoin | Neoformat clangformat
+

@@ -1,5 +1,7 @@
 # vimConfig
 
+git clone https://github.com/fengzero25/vimConfig.git
+
 1.install neovim
 https://github.com/neovim/neovim
 ln -s /usr/local/bin/nvim nvim.appimage
@@ -21,6 +23,9 @@ curl -sL install-node.now.sh/lts | sudo bash
 5.install coc extensions
 coc-json coc-tsserver coc-html coc-css coc-vetur coc-yaml coc-python coc-highlight coc-snippets coc-git coc-vimlsp coc-xml coc-pairs
 
+autocomplete
 6.ccls install
 https://github.com/MaskRay/ccls/wiki
+dependence: cmake g++ clang zlib-dev(zlib1g-dev
+format: clang-format
 
