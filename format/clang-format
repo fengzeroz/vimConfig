@@ -61,6 +61,10 @@ ForEachMacros:
   - BOOST_FOREACH
 IncludeBlocks:   Preserve
 IncludeCategories: 
+  - Regex:           'std*'
+    Priority:        -2
+  - Regex:           'setjmp.*'
+    Priority:        -1
   - Regex:           '^"(llvm|llvm-c|clang|clang-c)/'
     Priority:        2
   - Regex:           '^(<|"(gtest|gmock|isl|json)/)'
