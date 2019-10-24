@@ -1,7 +1,3 @@
-# vimConfig
-
-git clone https://github.com/fengzero25/vimConfig.git
-
 # Install
 ## install neovim
 <https://github.com/neovim/neovim>  
