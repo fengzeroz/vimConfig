@@ -11,19 +11,17 @@ ln -s /usr/local/bin/nvim nvim.appimage
 <https://github.com/junegunn/vim-plug>
 
 
-##create soft link
-`ln -s vimConfig/init.vim ~/.config/nvim/init.vim`
+## create soft link
+`ln -s vimConfig/init.vim ~/.config/nvim/init.vim`  
 `ln -s vimConfig/coc-settings.json ~/.config/nvim/coc-settings.json`
 
+## install coc-vim
+<https://github.com/neoclide/coc.vim>
 
-
-4.coc-vim
-https://github.com/neoclide/coc.vim
-
-install nodejs
+### install nodejs
 curl -sL install-node.now.sh/lts | sudo bash
 
-5.install coc extensions
+### install coc extensions
 coc-json coc-tsserver coc-html coc-css coc-vetur coc-yaml coc-python coc-highlight coc-snippets coc-git coc-vimlsp coc-xml coc-pairs
 
 autocomplete
