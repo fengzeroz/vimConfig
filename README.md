@@ -7,17 +7,15 @@ git clone https://github.com/fengzero25/vimConfig.git
 <https://github.com/neovim/neovim>  
 ln -s /usr/local/bin/nvim nvim.appimage
 
+## install vim-plug
+<https://github.com/junegunn/vim-plug>
 
 
+##create soft link
+`ln -s vimConfig/init.vim ~/.config/nvim/init.vim`
+`ln -s vimConfig/coc-settings.json ~/.config/nvim/coc-settings.json`
 
 
-2.install vim-plug
-https://github.com/junegunn/vim-plug
-:PlugInstall
-
-3.config
-ln -s vimConfig/init.vim ~/.config/nvim/init.vim
-ln -s vimConfig/coc-settings.json ~/.config/nvim/coc-settings.json
 
 4.coc-vim
 https://github.com/neoclide/coc.vim
