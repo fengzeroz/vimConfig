@@ -4,7 +4,7 @@ git clone https://github.com/fengzero25/vimConfig.git
 
 # Install
 ## install neovim
-<https://github.com/neovim/neovim>
+<https://github.com/neovim/neovim>  
 ln -s /usr/local/bin/nvim nvim.appimage
 
 
