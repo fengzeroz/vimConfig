@@ -47,5 +47,5 @@ dependence: cmake g++ clang zlib-dev(zlib1g-dev)
 # format
 <https://github.com/sbdchd/neoformat>
 ## clang-format
+<http://clang.llvm.org/docs/ClangFormat.html>  
 npm install -g clang-format
-<clang.llvm.org/docs/ClangFormat.html>
