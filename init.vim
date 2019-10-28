@@ -1,5 +1,6 @@
 set nocompatible
 syntax on
+set background=dark
 
 set encoding=utf-8
 set number
@@ -87,6 +88,8 @@ Plug 'scrooloose/nerdcommenter'
 "format
 Plug 'sbdchd/neoformat'
 
+Plug 'altercation/vim-colors-solarized'
+
 call plug#end()
 
 "nerdtree plug
@@ -142,3 +145,5 @@ let g:NERDToggleCheckAllLines = 1
 autocmd BufWritePre *.c undojoin | Neoformat clangformat
 autocmd BufWritePre *.h undojoin | Neoformat clangformat
 
+"color
+colorscheme solarized
