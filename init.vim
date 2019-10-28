@@ -60,6 +60,9 @@ nnoremap tj :+tabnext<CR>
 nnoremap <left> :vertical resize-5<CR>
 nnoremap <right> :vertical resize+5<CR>
 
+nnoremap fj :cnext<CR>
+nnoremap fk :cprev<CR>
+
 call plug#begin('~/.vim/plugged')
 
 Plug 'vim-airline/vim-airline'
@@ -83,6 +86,7 @@ Plug 'scrooloose/nerdcommenter'
 
 "format
 Plug 'sbdchd/neoformat'
+
 call plug#end()
 
 "nerdtree plug
