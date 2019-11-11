@@ -76,6 +76,10 @@
             "command": "efm-langserver",
             "args": [],
             "filetypes": ["vim", "eruby", "markdown", "yaml"]
+        },
+        "lua": {
+            "command": "lua-lsp",
+            "filetypes": ["lus"]
         }
     }
 }
