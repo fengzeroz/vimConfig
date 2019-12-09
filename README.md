@@ -2,6 +2,8 @@
 ## install neovim
 <https://github.com/neovim/neovim>  
 `ln -s /usr/local/bin/nvim nvim.appimage`
+pip install pynvim
+pip3 install pynvim
 
 ## install vim-plug
 <https://github.com/junegunn/vim-plug>

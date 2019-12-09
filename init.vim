@@ -63,7 +63,7 @@ nnoremap <right> :vertical resize+5<CR>
 nnoremap fj :cnext<CR>
 nnoremap fk :cprev<CR>
 
-call plug#begin('~/.vim/plugged')
+call plug#begin('~/.nvim/plugged')
 
 Plug 'vim-airline/vim-airline'
 Plug 'yianwillis/vimcdoc'
