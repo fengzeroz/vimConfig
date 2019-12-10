@@ -41,6 +41,12 @@ dependence: cmake g++ clang zlib-dev(zlib1g-dev)
 ## efm-langserver(vim/erb/markdown)
 <https://github.com/mattn/efm-langserver>
 
+##haskell-ide-engine
+<https://github.com/haskell/haskell-ide-engine#installation>
+<https://mirrors.tuna.tsinghua.edu.cn/help/hackage/>
+<http://docs.haskellstack.org/en/stable/install_and_upgrade/#ubuntu>
+install stack by generic
+
 
 # format
 <https://github.com/sbdchd/neoformat>

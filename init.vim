@@ -166,3 +166,5 @@ let g:NERDToggleCheckAllLines = 1
 "format
 autocmd BufWritePre *.c undojoin | Neoformat clangformat
 autocmd BufWritePre *.h undojoin | Neoformat clangformat
+
+au BufRead,BufNewFile *.sbt set filetype=scala
