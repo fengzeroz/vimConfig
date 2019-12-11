@@ -45,6 +45,7 @@ dependence: cmake g++ clang zlib-dev(zlib1g-dev)
 <https://github.com/haskell/haskell-ide-engine#installation>
 <https://mirrors.tuna.tsinghua.edu.cn/help/hackage/>
 <http://docs.haskellstack.org/en/stable/install_and_upgrade/#ubuntu>
+<https://mirror.tuna.tsinghua.edu.cn/help/stackage/>
 install stack by generic
 
 
