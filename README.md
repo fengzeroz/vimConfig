@@ -48,7 +48,6 @@ dependence: cmake g++ clang zlib-dev(zlib1g-dev)
 <https://mirror.tuna.tsinghua.edu.cn/help/stackage/>
 install stack by generic
 
-
 # format
 <https://github.com/sbdchd/neoformat>
 ## clang-format
