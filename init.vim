@@ -113,6 +113,17 @@ nmap <silent> <LEADER>fr <Plug>(coc-references)
 nmap <leader>rn <Plug>(coc-rename)
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
+nnoremap <silent>F :call CocAction('format')<CR>
+nnoremap <silent>K :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+    if &filetype == 'vim'
+        execute 'h '.expand('<cword>')
+    else
+        call CocAction('doHover')
+    endif
+endfunction
+
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
 nmap <leader>qf <Plug>(coc-fix-current)
@@ -167,4 +178,5 @@ let g:NERDToggleCheckAllLines = 1
 autocmd BufWritePre *.c undojoin | Neoformat clangformat
 autocmd BufWritePre *.h undojoin | Neoformat clangformat
 
-au BufRead,BufNewFile *.sbt set filetype=scala
+autocmd BufRead,BufNewFile *.sbt set filetype=scala
+autocmd FileType json syntax match Comment +\/\/.\+$+
