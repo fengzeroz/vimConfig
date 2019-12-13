@@ -49,7 +49,9 @@ dependence: cmake g++ clang zlib-dev(zlib1g-dev)
 install stack by generic
 
 # format
-<https://github.com/sbdchd/neoformat>
+<https://github.com/Chiel92/vim-autoformat>
+## scala
+<https://scalameta.org/scalafmt/docs/installation.html#vim>
 ## clang-format
 <http://clang.llvm.org/docs/ClangFormat.html>  
 `npm install -g clang-format`

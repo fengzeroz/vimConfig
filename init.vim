@@ -85,7 +85,7 @@ Plug 'honza/vim-snippets'
 Plug 'scrooloose/nerdcommenter'
 
 "format
-Plug 'sbdchd/neoformat'
+Plug 'Chiel92/vim-autoformat'
 
 call plug#end()
 
@@ -113,7 +113,6 @@ nmap <silent> <LEADER>fr <Plug>(coc-references)
 nmap <leader>rn <Plug>(coc-rename)
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
-nnoremap <silent>F :call CocAction('format')<CR>
 nnoremap <silent>K :call <SID>show_documentation()<CR>
 
 function! s:show_documentation()
@@ -149,19 +148,6 @@ nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 
-"gtags
-let $GTAGSLABEL = 'native-pygments'
-let $GTAGSCONF = '/usr/local/share/gtags/gtags.conf'
-
-"glang gopls GO111MODULE=on
-"go get golang.org/x/tools/gopls@latest .
-"auto import
-autocmd BufWritePre *.go :call CocAction('runCommand', 'editor.action.organizeImport')
-autocmd BufWritePre *.go :call CocAction('format')
-
-"scala
-autocmd BufRead,BufNewFile *.sbt set filetype=scala
-
 set statusline^=%{coc#status()}%{get(b:'coc_current_function','')}
 
 "nerdcommenter
@@ -175,8 +161,29 @@ let g:NERDTrimTrailingWhitespace = 1
 let g:NERDToggleCheckAllLines = 1
 
 "format
-autocmd BufWritePre *.c undojoin | Neoformat clangformat
-autocmd BufWritePre *.h undojoin | Neoformat clangformat
+"vim-autofmt
+autocmd BufWrite *.scala :Autoformat
+autocmd BufWrite *.h :Autoformat
+autocmd BufWrite *.c :Autoformat
+autocmd BufWrite *.go :Autoformat
 
-autocmd BufRead,BufNewFile *.sbt set filetype=scala
-autocmd FileType json syntax match Comment +\/\/.\+$+
+let g:autoformat_autoindent = 0
+let g:autoformat_retab = 0
+let g:autoformat_remove_trailing_spaces = 0
+
+"c/c++
+"clang-format
+
+"golang
+"gofmt
+"glang gopls GO111MODULE=on
+"go get golang.org/x/tools/gopls@latest .
+"auto import
+"autocmd BufWritePre *.go :call CocAction('runCommand', 'editor.action.organizeImport')
+"autocmd BufWritePre *.go :call CocAction('format')
+
+"scala
+let g:formatdef_scalafmt = "'scalafmt --stdin 2>/dev/null'"
+let g:formatters_scala = ['scalafmt']
+"autocmd BufRead,BufNewFile *.sbt set filetype=scala
+"autocmd FileType json syntax match Comment +\/\/.\+$+
