@@ -87,6 +87,12 @@ Plug 'scrooloose/nerdcommenter'
 "format
 Plug 'Chiel92/vim-autoformat'
 
+"highligh
+Plug 'jackguo380/vim-lsp-cxx-highlight'
+
+
+Plug 'altercation/vim-colors-solarized'
+
 call plug#end()
 
 "nerdtree plug
@@ -187,3 +193,10 @@ let g:formatdef_scalafmt = "'scalafmt --stdin 2>/dev/null'"
 let g:formatters_scala = ['scalafmt']
 "autocmd BufRead,BufNewFile *.sbt set filetype=scala
 "autocmd FileType json syntax match Comment +\/\/.\+$+
+"
+
+
+"highlight
+set background=dark
+colorscheme solarized
+"clang-format/vim-lsp-cxx-highlight
