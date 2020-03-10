@@ -154,6 +154,8 @@ autocmd BufWrite *.scala :Autoformat
 autocmd BufWrite *.h :Autoformat
 autocmd BufWrite *.c :Autoformat
 autocmd BufWrite *.go :Autoformat
+autocmd BufWrite *.json :Autoformat
+autocmd BufWrite *.py :Autoformat
 
 let g:autoformat_autoindent = 0
 let g:autoformat_retab = 0
