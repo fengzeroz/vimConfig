@@ -54,7 +54,11 @@
             ],
             "filetypes": [
                 "go"
-            ]
+            ],
+            "initializationOptions": {
+                "usePlaceholders":true
+            },
+            "disableWorkspaceFolders": true
         },
         "haskell": {
             "command": "hie-wrapper",

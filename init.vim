@@ -153,8 +153,8 @@ let g:NERDToggleCheckAllLines = 1
 autocmd BufWrite *.scala :Autoformat
 autocmd BufWrite *.h :Autoformat
 autocmd BufWrite *.c :Autoformat
-autocmd BufWrite *.go :Autoformat
-autocmd BufWrite *.json :Autoformat
+"autocmd BufWrite *.go :Autoformat
+"autocmd BufWrite *.json :Autoformat
 autocmd BufWrite *.py :Autoformat
 
 let g:autoformat_autoindent = 0
@@ -169,8 +169,8 @@ let g:autoformat_remove_trailing_spaces = 0
 "glang gopls GO111MODULE=on
 "go get golang.org/x/tools/gopls@latest .
 "auto import
-"autocmd BufWritePre *.go :call CocAction('runCommand', 'editor.action.organizeImport')
-"autocmd BufWritePre *.go :call CocAction('format')
+autocmd BufWritePre *.go :call CocAction('runCommand', 'editor.action.organizeImport')
+autocmd BufWritePre *.go :call CocAction('format')
 
 "scala
 let g:formatdef_scalafmt = "'scalafmt --stdin 2>/dev/null'"
