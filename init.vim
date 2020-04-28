@@ -1,6 +1,7 @@
 set nocompatible
 syntax on
 
+set hidden
 set encoding=utf-8
 set number
 set relativenumber
@@ -9,7 +10,7 @@ set hlsearch
 exec "nohlsearch"
 set mouse=a
 set incsearch
-set ignorecase
+"set ignorecase
 set smartcase
 set autowrite
 set autochdir
@@ -72,6 +73,7 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tpope/vim-fugitive'
 Plug 'derekwyatt/vim-scala'
+Plug 'tpope/vim-surround'
 
 "coc plug
 "coc-json, coc-tsserver, coc-html, coc-css, coc-vetur, coc-yaml, coc-python

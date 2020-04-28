@@ -50,6 +50,7 @@
         "golang": {
             "command": "gopls",
             "rootPatterns": [
+                ".git/",
                 "go.mod"
             ],
             "filetypes": [
@@ -80,7 +81,7 @@
         },
         "lua": {
             "command": "lua-lsp",
-            "filetypes": ["lus"]
+            "filetypes": ["lua"]
         },
         "python":{
             "filetypes": ["python"],
