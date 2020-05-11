@@ -63,6 +63,8 @@ install stack by generic
 
 # format
 <https://github.com/Chiel92/vim-autoformat>
+## json  
+npm install -g js-beautify  
 ## scala
 <https://scalameta.org/scalafmt/docs/installation.html#vim>
 ## clang-format

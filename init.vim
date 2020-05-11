@@ -150,6 +150,9 @@ let g:NERDCommentEmptyLines = 1
 let g:NERDTrimTrailingWhitespace = 1
 let g:NERDToggleCheckAllLines = 1
 
+let g:autoformat_autoindent = 0
+let g:autoformat_retab = 0
+let g:autoformat_remove_trailing_spaces = 0
 "format
 "vim-autofmt
 autocmd BufWrite *.scala :Autoformat
@@ -158,10 +161,8 @@ autocmd BufWrite *.c :Autoformat
 "autocmd BufWrite *.go :Autoformat
 "autocmd BufWrite *.json :Autoformat
 autocmd BufWrite *.py :Autoformat
+autocmd BufWrite *.json :Autoformat
 
-let g:autoformat_autoindent = 0
-let g:autoformat_retab = 0
-let g:autoformat_remove_trailing_spaces = 0
 
 "c/c++
 "clang-format
