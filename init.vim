@@ -1,5 +1,7 @@
 set nocompatible
+set termguicolors
 syntax on
+filetype plugin indent on
 
 set hidden
 set encoding=utf-8
@@ -74,6 +76,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tpope/vim-fugitive'
 Plug 'derekwyatt/vim-scala'
 Plug 'tpope/vim-surround'
+Plug 'neovimhaskell/haskell-vim'
 
 "coc plug
 "coc-json, coc-tsserver, coc-html, coc-css, coc-vetur, coc-yaml, coc-python
@@ -188,3 +191,13 @@ command! -nargs=0 MetalsImport :call CocRequestAsync('metals', 'workspace/execut
 set background=dark
 colorscheme solarized
 "clang-format/vim-lsp-cxx-highlight
+
+
+"haskell vim highlighting
+let g:haskell_enable_quantification = 1   " to enable highlighting of `forall`
+let g:haskell_enable_recursivedo = 1      " to enable highlighting of `mdo` and `rec`
+let g:haskell_enable_arrowsyntax = 1      " to enable highlighting of `proc`
+let g:haskell_enable_pattern_synonyms = 1 " to enable highlighting of `pattern`
+let g:haskell_enable_typeroles = 1        " to enable highlighting of type roles
+let g:haskell_enable_static_pointers = 1  " to enable highlighting of `static`
+let g:haskell_backpack = 1                " to enable highlighting of backpack keywords

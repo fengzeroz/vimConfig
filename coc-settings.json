@@ -23,7 +23,9 @@
                 "cache": {
                     "directory": "/tmp/ccls"
                 },
-                "highlight": {"lsRanges": true}
+                "highlight": {
+                    "lsRanges": true
+                }
             }
         },
         "bash": {
@@ -57,24 +59,25 @@
                 "go"
             ],
             "initializationOptions": {
-                "usePlaceholders":true
+                "usePlaceholders": true
             },
-            "disableWorkspaceFolders": true
+            "disableWorkspaceFolders": false
         },
         "haskell": {
             "command": "hie-wrapper",
-            "rootPatterns": [".stack.yaml", "cabal.config", "package.yaml", "*.cabal"],
+            "args": ["--lsp"],
+            "rootPatterns": ["stack.yaml", "cabal.config", "package.yaml", "*.cabal"],
             "filetypes": ["hs", "lhs", "haskell"],
             "initializationOptions": {},
             "settings": {
                 "languageServerHaskell": {
-                    "hlintOn": false,
+                    "hlintOn": true,
                     "maxNumberOfProblems": 10,
                     "completionSnippetsOn": true
                 }
             }
         },
-        "metals":{
+        "metals": {
             "command": "metals-vim",
             "rootPatterns": ["build.sbt"],
             "filetypes": ["scala", "sbt"]
@@ -83,7 +86,7 @@
             "command": "lua-lsp",
             "filetypes": ["lua"]
         },
-        "python":{
+        "python": {
             "filetypes": ["python"],
             "command": "python3",
             "args": [
@@ -94,32 +97,32 @@
             ],
             "trace.server": "verbose",
             "settings": {
-                "pyls":{
-                    "enable":true,
-                    "trace":{
-                        "server":"verbose"
+                "pyls": {
+                    "enable": true,
+                    "trace": {
+                        "server": "verbose"
                     },
                     "commandPath": "",
-                    "configurationSources":[
+                    "configurationSources": [
                         "pycodestyle"
                     ],
-                    "plugins":{
+                    "plugins": {
                         "jedi_completion": {
                             "enabled": true
                         },
                         "jedi_hover": {
                             "enabled": true
-                         },
+                        },
                         "jedi_references": {
                             "enabled": true
-                         },
+                        },
                         "jedi_signature_help": {
                             "enabled": true
-                         },
+                        },
                         "jedi_symbols": {
                             "enabled": true,
                             "all_scopes": true
-                         },
+                        },
                         "mccabe": {
                             "enabled": true,
                             "threshold": 15
