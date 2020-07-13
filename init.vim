@@ -7,7 +7,7 @@ set hidden
 set encoding=utf-8
 set number
 set relativenumber
-set cursorline
+"set cursorline
 set hlsearch
 exec "nohlsearch"
 set mouse=a
@@ -98,6 +98,8 @@ Plug 'jackguo380/vim-lsp-cxx-highlight'
 
 Plug 'altercation/vim-colors-solarized'
 
+Plug 'morhetz/gruvbox'
+
 call plug#end()
 
 "nerdtree plug
@@ -186,10 +188,14 @@ let g:formatters_scala = ['scalafmt']
 "
 command! -nargs=0 MetalsImport :call CocRequestAsync('metals', 'workspace/executeCommand', { 'command': 'build-import' })
 
+"gruvbox color
+set background=dark
+colorscheme gruvbox
+highlight Normal guibg=NONE ctermbg=None
 
 "highlight
-set background=dark
-colorscheme solarized
+"set background=dark
+"colorscheme solarized
 "clang-format/vim-lsp-cxx-highlight
 
 
