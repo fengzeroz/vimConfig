@@ -96,7 +96,7 @@ Plug 'Chiel92/vim-autoformat'
 Plug 'jackguo380/vim-lsp-cxx-highlight'
 
 
-Plug 'altercation/vim-colors-solarized'
+"Plug 'altercation/vim-colors-solarized'
 
 Plug 'morhetz/gruvbox'
 
@@ -163,6 +163,8 @@ let g:autoformat_remove_trailing_spaces = 0
 autocmd BufWrite *.scala :Autoformat
 autocmd BufWrite *.h :Autoformat
 autocmd BufWrite *.c :Autoformat
+autocmd BufWrite *.hpp :Autoformat
+autocmd BufWrite *.cpp :Autoformat
 "autocmd BufWrite *.go :Autoformat
 "autocmd BufWrite *.json :Autoformat
 autocmd BufWrite *.py :Autoformat
@@ -191,7 +193,7 @@ command! -nargs=0 MetalsImport :call CocRequestAsync('metals', 'workspace/execut
 "gruvbox color
 set background=dark
 colorscheme gruvbox
-highlight Normal guibg=NONE ctermbg=None
+"highlight Normal guibg=NONE ctermbg=None
 
 "highlight
 "set background=dark

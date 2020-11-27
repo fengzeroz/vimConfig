@@ -15,6 +15,7 @@
             "rootPatterns": [
                 "CMakeLists.txt",
                 "compile_commands.json",
+                ".ccls",
                 ".vim/",
                 ".git/",
                 ".hg/"
