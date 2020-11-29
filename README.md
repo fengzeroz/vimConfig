@@ -51,6 +51,9 @@ dependence: cmake g++ clang zlib-dev(zlib1g-dev)
 ## metals(scala)
 <https://scalameta.org/metals/docs/editors/vim.html>
 
+## python
+pip3 install jedi
+
 ## efm-langserver(vim/erb/markdown)
 <https://github.com/mattn/efm-langserver>
 
