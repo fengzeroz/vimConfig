@@ -1,0 +1,171 @@
+{
+    "log": {
+        "access": "/var/log/v2ray/access.log",
+        "loglevel": "info",
+        "error": "/var/log/v2ray/error.log"
+    },
+    "dns": {
+        "servers": [
+		{
+                "address": "114.114.114.114",
+                "port": 53,
+                "domains": [
+                    "geosite:cn"
+                ]
+            },
+            "8.8.8.8"
+        ]
+    },
+    "routing": {
+        "domainStrategy": "IPOnDemand",
+        "rules": [{
+                "type": "field",
+                "inboundTag": [
+                    "dns-in"
+                ],
+                "outboundTag": "dns-out"
+            },
+            {
+                "type": "field",
+                "ip": [
+                    "8.8.8.8"
+                ],
+                "outboundTag": "proxy"
+            },
+            {
+                "type": "field",
+                "outboundTag": "proxy",
+                "domain": [
+                    "domain:github.com"
+                ]
+            },
+            {
+                "type": "field",
+                "domain": [
+                    "geosite:cn"
+                ],
+                "outboundTag": "direct"
+            },
+            {
+                "type": "field",
+                "ip": [
+                    "geoip:private",
+                    "geoip:cn",
+                    "47.240.8.184",
+                    "223.5.5.5",
+                    "114.114.114.114"
+                ],
+                "outboundTag": "direct"
+            },
+            {
+                "type": "field",
+                "domain": [
+                    "geosite:category-ads-all"
+                ],
+                "outboundTag": "direct"
+            },
+            {
+                "type": "field",
+                "protocol": ["bittorrent"],
+                "outboundTag": "direct"
+            },
+            {
+                "type": "field",
+                "outboundTag": "proxy",
+                "domain": [
+                    "geosite:geolocation-!cn",
+                    "domain:haskell.org"
+                ]
+            }
+        ]
+    },
+    "inbounds": [{
+            "port": 1080,
+            "protocol": "http",
+            "sniffing": {
+                "enabled": true,
+                "destOverride": ["http", "tls"]
+            },
+            "settings": {
+                "auth": "noauth"
+            }
+        },
+        {
+            "protocol": "dokodemo-door",
+            "listen": "0.0.0.0",
+            "port": 12345,
+            "settings": {
+                "network": "tcp,udp",
+                "followRedirect": true
+            },
+            "sniffing": {
+                "enabled": true,
+                "destOverride": [
+                    "http",
+                    "tls"
+                ]
+            },
+            "streamSettings": {
+                "sockopt": {
+                    "tproxy": "tproxy"
+                }
+            }
+        },
+        {
+            "listen": "0.0.0.0",
+            "port": 53,
+            "tag": "dns-in",
+            "protocol": "dokodemo-door",
+            "settings": {
+                "address": "114.114.114.114",
+                "port": 53,
+                "network": "udp"
+            }
+        }
+    ],
+    "outbounds": [{
+            "tag": "proxy",
+            "protocol": "vmess",
+            "settings": {
+                "vnext": [{
+                    "address": "fj.fengzero.com",
+                    "port": 443,
+                    "users": [{
+                        "id": "57b0f585-ee93-4b64-b74b-3a82769dcdb2",
+                        "alterId": 100
+                    }]
+                }]
+            },
+            "streamSettings": {
+                "sockopt": {
+                    "mark": 255
+                },
+                "network": "ws",
+                "security": "tls",
+                "wsSettings": {
+                    "path": "/haha"
+                }
+            }
+        },
+        {
+            "tag": "dns-out",
+            "protocol": "dns"
+        },
+        {
+            "tag": "block",
+            "protocol": "blackhole",
+            "settings": {
+                "response": {
+                    "type": "http"
+                }
+            }
+        },
+        {
+            "tag": "direct",
+            "protocol": "freedom",
+            "settings": {
+                "domainStrategy": "UseIP"
+            }
+        }
+    ]
+}
