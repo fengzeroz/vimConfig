@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/zp/.oh-my-zsh"
+export ZSH=~/.oh-my-zsh
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -97,20 +97,4 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-[[ -s /home/zp/.autojump/etc/profile.d/autojump.sh ]] && source /home/zp/.autojump/etc/profile.d/autojump.sh
-
-export LC_ALL=C
-
-#golang
-#export PATH=$PATH:/usr/local/go/bin
-#export GOROOT=/usr/local/go
-#export GO111MODULE=on
-#export GOPROXY=https://goproxy.io
-
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-#export SDKMAN_DIR="/home/zp/.sdkman"
-#[[ -s "/home/zp/.sdkman/bin/sdkman-init.sh" ]] && source "/home/zp/.sdkman/bin/sdkman-init.sh"
-
-#haskell path
-#export PATH=$PATH:~/.local/bin:/opt/ghc/bin:/opt/cabal/bin
-
+[[ -s ~/.fengzero.sh ]] && source ~/.fengzero.sh

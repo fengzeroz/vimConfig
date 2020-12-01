@@ -4,7 +4,8 @@
 
 `sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"`  
 
-`cp zshrc ~/.zshrc`  
+`ln -sf ~/Program/vimConfig/zshrc .zshrc`
+`ln -sf ~/Program/vimConfig/fengzero.sh .fengzero.sh`
 
 `apt-get install autojump`  
 
