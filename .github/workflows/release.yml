@@ -1,0 +1,26 @@
+name: release workflow
+
+on:
+  release:
+    types:
+      - published
+
+jobs:
+  build:
+    strategy:
+      matrix:
+        os: [ ubuntu-20.04 ]
+        name: [ release ]
+
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      # checkout
+      - name: compile
+        run: |
+          echo "release....."
+
+
+      # unit test
+
+      # create or update release
