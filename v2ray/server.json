@@ -1,0 +1,118 @@
+{
+    "reverse": {
+        "portals": [
+            {
+                "tag": "portal-api",
+                "domain": "api.neuron.com"
+            },
+            {
+                "tag": "portal-web",
+                "domain": "web.neuron.com"
+            }
+        ]
+    },
+    "log": {
+        "access": "/var/log/v2ray/access.log",
+        "error": "/var/log/v2ray/error.log",
+        "loglevel": "info"
+    },
+    "routing": {
+        "rules": [
+            {
+                "type": "field",
+                "inboundTag": [
+                    "external-web"
+                ],
+                "outboundTag": "portal-web"
+            },
+            {
+                "type": "field",
+                "inboundTag": [
+                    "external-api"
+                ],
+                "outboundTag": "portal-api"
+            },
+            {
+                "type": "field",
+                "inboundTag": [
+                    "tunnel"
+                ],
+                "domain": [
+                    "full:api.neuron.com"
+                ],
+                "outboundTag": "portal-api"
+            },
+            {
+                "type": "field",
+                "inboundTag": [
+                    "tunnel"
+                ],
+                "domain": [
+                    "full:web.neuron.com"
+                ],
+                "outboundTag": "portal-web"
+            }
+        ]
+    },
+    "inbounds": [
+        {
+            "tag": "external-web",
+            "port": 7000,
+            "protocol": "dokodemo-door",
+            "settings": {
+                "address": "192.168.10.168",
+                "port": 7000,
+                "network": "tcp"
+            }
+        },
+        {
+            "tag": "external-api",
+            "port": 7001,
+            "protocol": "dokodemo-door",
+            "settings": {
+                "address": "192.168.10.168",
+                "port": 7001,
+                "network": "tcp"
+            }
+        },
+        {
+            "tag": "tunnel",
+            "port": 1024,
+            "protocol": "vmess",
+            "settings": {
+                "clients": [
+                    {
+                        "id": "b831381d-6324-4d53-ad4f-8cda48b30811",
+                        "alterId": 64
+                    }
+                ]
+            }
+        },
+        {
+            "port": 59999,
+            "listen": "127.0.0.1",
+            "protocol": "vmess",
+            "settings": {
+                "clients": [
+                    {
+                        "id": "57b0f585-ee93-4b64-b74b-3a82769dcdb2",
+                        "level": 1,
+                        "alterId": 100
+                    }
+                ]
+            },
+            "streamSettings": {
+                "network": "ws",
+                "wsSettings": {
+                    "path": "/haha"
+                }
+            }
+        }
+    ],
+    "outbounds": [
+        {
+            "protocol": "freedom",
+            "settings": {}
+        }
+    ]
+}
