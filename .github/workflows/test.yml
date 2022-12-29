@@ -51,3 +51,4 @@ jobs:
             --build-arg VERSION=${{ env.VERSION }} \
             --build-arg NAME=${{ matrix.name }} \
             -f docker/Dockerfile .
+            --load
