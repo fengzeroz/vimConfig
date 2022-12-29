@@ -50,5 +50,5 @@ jobs:
             -t emqx/${{ matrix.name }}:latest \
             --build-arg VERSION=${{ env.VERSION }} \
             --build-arg NAME=${{ matrix.name }} \
-            -f docker/Dockerfile .
-            --push
+            -f docker/Dockerfile . \
+            --load
