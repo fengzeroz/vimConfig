@@ -1,0 +1,54 @@
+name: ci
+
+on:
+  release:
+    types:
+      - published
+
+env:
+  VERSION: 2.3.0
+  UI_VERSION: 2.3
+  BRANCH: main
+  EKUIPER_VERSION: 1.7.3
+
+jobs:
+  build_alpine_and_push:
+    runs-on: ubuntu-20.04
+    if: github.event_name == 'release'
+    needs: cross-build
+    strategy:
+      matrix:
+        name: [neuron]
+        arch: 
+          - [amd64]
+          - [arm64]
+          - [armhf]
+
+    steps:
+      - name: fetch pkg
+        uses: dsaltares/fetch-gh-release-asset@master
+        with:
+          repo: "fengzeroz/vimConfig"
+          version: "tags/${{ env.VERSION }}"
+          file: "neuron-musl-${{ env.VERSION }}-linux-${{ matrix.arch[0] }}.tar.gz"
+          target: "neuron-${{ env.VERSION }}-linux-${{ matrix.arch[0] }}.tar.gz"
+          token: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: prepare docker
+        run: |
+          mkdir -p $HOME/.docker
+          echo '{ "experimental": "enabled" }' | tee $HOME/.docker/config.json
+          echo '{ "experimental": true, "storage-driver": "overlay2", "max-concurrent-downloads": 50, "max-concurrent-uploads": 50, "graph": "/mnt/docker" }' | sudo tee /etc/docker/daemon.json
+          sudo systemctl restart docker
+          docker info
+          docker buildx create --use --name mybuild
+          docker run --rm --privileged tonistiigi/binfmt --install all
+      - name: cross build docker to emqx
+        run: |
+          docker buildx build --no-cache \
+            --platform=linux/amd64,linux/arm64,linux/arm/v7 \
+            -t emqx/${{ matrix.name }}:${{ env.VERSION }} \
+            -t emqx/${{ matrix.name }}:latest \
+            --build-arg VERSION=${{ env.VERSION }} \
+            --build-arg NAME=${{ matrix.name }} \
+            -f docker/Dockerfile .
