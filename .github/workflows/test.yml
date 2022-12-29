@@ -6,7 +6,7 @@ on:
       - published
 
 env:
-  VERSION: 2.3.0
+  VERSION: 2.3.1
   UI_VERSION: 2.3
   BRANCH: main
   EKUIPER_VERSION: 1.7.3
